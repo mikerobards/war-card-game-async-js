@@ -38,5 +38,18 @@ function filterArray(array, callback) {
     return resultingArray
 }
 
-console.log(filterArray(people, hasPet))
+let petArr = filterArray(people, hasPet)
+
+
+
+const hasPets = (arr) => {
+    arr.forEach(i => {
+        console.log(i.name)
+    })
+}
+
+console.log(hasPets(petArr))
+
+
+
 
