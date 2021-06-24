@@ -8,6 +8,8 @@ const handleClick = () => {
 
 button.addEventListener('click', handleClick)
 
+
+
 // const timer = () => {
 //     console.log("I finally ran!")
 // }
