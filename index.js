@@ -8,11 +8,11 @@ const handleClick = () => {
 
 button.addEventListener('click', handleClick)
 
-const timer = () => {
-    console.log("I finally ran!")
-}
+// const timer = () => {
+//     console.log("I finally ran!")
+// }
 
-setTimeout(timer, 2000)
+// setTimeout(timer, 2000)
 
 // filter challenge
 const people = [
@@ -23,7 +23,20 @@ const people = [
 ]
 
 const hasPet = person => person.hasPet
+// const peopleWithPets = people.filter(hasPet)
+// console.log(peopleWithPets)
 
-const peopleWithPets = people.filter(hasPet)
 
-console.log(peopleWithPets)
+function filterArray(array, callback) {
+    const resultingArray = []
+    // Write your filtering logic here
+    array.forEach(item => {
+        if (callback(item)) {
+            resultingArray.push(item)
+        }
+    })
+    return resultingArray
+}
+
+console.log(filterArray(people, hasPet))
+
