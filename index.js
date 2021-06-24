@@ -14,3 +14,16 @@ const timer = () => {
 
 setTimeout(timer, 2000)
 
+// filter challenge
+const people = [
+    { name: "Jack", hasPet: true },
+    { name: "Jill", hasPet: false },
+    { name: "Alice", hasPet: true },
+    { name: "Bob", hasPet: false },
+]
+
+const hasPet = person => person.hasPet
+
+const peopleWithPets = people.filter(hasPet)
+
+console.log(peopleWithPets)
