@@ -22,19 +22,24 @@ button {
 button#new-deck {
   align-self: flex-start;
   padding: 5px;
+  font-weight: 900;
+  font-size: 1.1em;
 }
 
-button.draw {
+button#draw-cards {
   font-size: 1.2em;
   padding: 5px;
+}
+
+#cards {
+  align-self: center;
 }
 
 .card-1,
 .card-2 {
   height: 19.5em;
   width: 14em;
-  border: 2px solid black;
-  align-self: center;
+  border: 3px solid black;
   margin: 1em;
   border-radius: 5%;
 }
