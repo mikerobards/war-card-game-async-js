@@ -43,3 +43,10 @@ button#draw-cards {
   margin: 1em;
   border-radius: 5%;
 }
+
+.winner {
+  color: white;
+  align-self: center;
+  font-size: 2em;
+  font-weight: 900;
+}
