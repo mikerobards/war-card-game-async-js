@@ -29,6 +29,7 @@ button#new-deck {
 button#draw-cards {
   font-size: 1.2em;
   padding: 5px;
+  margin-top: 0.5em;
 }
 
 #cards {
@@ -44,9 +45,11 @@ button#draw-cards {
   border-radius: 5%;
 }
 
-.winner {
+.winner,
+.num-cards {
   color: white;
   align-self: center;
   font-size: 2em;
   font-weight: 900;
+  height: 1.1em;
 }
