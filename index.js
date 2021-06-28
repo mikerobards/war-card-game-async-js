@@ -11,7 +11,7 @@ let deckID = ''
 let PCScore = 0
 let myScore = 0
 
-const handleClick = () => {
+const newDeck = () => {
     fetch('https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/')
         .then(res => res.json())
         .then(data => {
@@ -19,6 +19,14 @@ const handleClick = () => {
             deckID = data.deck_id
             numCardsText.innerText = `Cards Remaining: ${data.remaining}`
         })
+    drawBTN.disabled = false
+    card1.innerHTML = ''
+    card2.innerHTML = ''
+    winnerText.innerText = 'Game of WAR!!!'
+    PCScore = 0
+    myScore = 0
+    PCScoreText.innerText = ''
+    myScoreText.innerText = ''
 }
 
 const drawCards = () => {
@@ -32,7 +40,11 @@ const drawCards = () => {
             numCardsText.innerText = `Cards Remaining: ${data.remaining}`
             if (data.remaining === 0) {
                 drawBTN.disabled = true
-                // drawBTN.style.display = 'none'
+                if (PCScore > myScore) {
+                    winnerText.innerText = "Computer Wins!"
+                } else {
+                    winnerText.innerText = "You Win!"
+                }
             }
         })
     console.log(deckID)
@@ -55,5 +67,5 @@ const scoreCards = (a, b) => {
 }
 
 
-button.addEventListener('click', handleClick)
+button.addEventListener('click', newDeck)
 drawBTN.addEventListener('click', drawCards)
