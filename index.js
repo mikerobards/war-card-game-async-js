@@ -30,7 +30,7 @@ const drawCards = () => {
             numCardsText.innerText = `Cards Remaining: ${data.remaining}`
             if (data.remaining === 0) {
                 drawBTN.disabled = true
-                drawBTN.style.display = 'none'
+                // drawBTN.style.display = 'none'
             }
         })
     console.log(deckID)

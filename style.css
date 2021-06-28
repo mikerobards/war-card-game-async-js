@@ -64,3 +64,8 @@ div.top > div.num-cards {
   margin: 0;
   margin-left: 50px;
 }
+
+button:disabled {
+  display: none;
+  cursor: not-allowed;
+}
