@@ -29,6 +29,14 @@ const newDeck = () => {
     myScoreText.innerText = ''
 }
 
+// async function newDeck() {
+//     const response = await fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
+//     const data = await response.json()
+//     remainingText.textContent = `Remaining cards: ${data.remaining}`
+//     deckId = data.deck_id
+//     console.log(deckId)
+// }
+
 const drawCards = () => {
     fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckID}/draw/?count=2`)
         .then(res => res.json())
