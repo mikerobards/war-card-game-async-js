@@ -28,6 +28,10 @@ const drawCards = () => {
             card2.innerHTML = `<img src=${data.cards[1].image}>`
             winnerText.innerText = scoreCards(data.cards[0].value, data.cards[1].value)
             numCardsText.innerText = `Cards Remaining: ${data.remaining}`
+            if (data.remaining === 0) {
+                drawBTN.disabled = true
+                drawBTN.style.display = 'none'
+            }
         })
     console.log(deckID)
 

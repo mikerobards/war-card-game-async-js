@@ -53,3 +53,14 @@ button#draw-cards {
   font-weight: 900;
   height: 1.1em;
 }
+
+.top {
+  display: flex;
+  align-self: flex-start;
+  margin-bottom: 10px;
+}
+
+div.top > div.num-cards {
+  margin: 0;
+  margin-left: 50px;
+}
