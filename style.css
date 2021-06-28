@@ -33,7 +33,9 @@ button#draw-cards {
 }
 
 #cards {
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-1,
@@ -46,7 +48,9 @@ button#draw-cards {
 }
 
 .winner,
-.num-cards {
+.num-cards,
+.pc-score,
+.my-score {
   color: white;
   align-self: center;
   font-size: 2em;
@@ -68,4 +72,13 @@ div.top > div.num-cards {
 button:disabled {
   display: none;
   cursor: not-allowed;
+}
+
+.pc-score,
+.my-score {
+  margin: 0 auto;
+}
+
+.winner {
+  margin-bottom: 10px;
 }

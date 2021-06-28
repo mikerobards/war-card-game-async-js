@@ -4,10 +4,12 @@ const card1 = document.querySelector('.card-1')
 const card2 = document.querySelector('.card-2')
 const winnerText = document.querySelector('.winner')
 const numCardsText = document.querySelector('.num-cards')
-const scoreText = document.querySelector('.score-el')
+const PCScoreText = document.querySelector('.pc-score')
+const myScoreText = document.querySelector('.my-score')
 const cardValue = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'JACK', 'QUEEN', 'KING', 'ACE']
 let deckID = ''
-let score = 0
+let PCScore = 0
+let myScore = 0
 
 const handleClick = () => {
     fetch('https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/')
@@ -26,7 +28,7 @@ const drawCards = () => {
             console.log(data)
             card1.innerHTML = `<img src=${data.cards[0].image}>`
             card2.innerHTML = `<img src=${data.cards[1].image}>`
-            winnerText.innerText = scoreCards(data.cards[0].value, data.cards[1].value)
+            scoreCards(data.cards[0].value, data.cards[1].value)
             numCardsText.innerText = `Cards Remaining: ${data.remaining}`
             if (data.remaining === 0) {
                 drawBTN.disabled = true
@@ -39,12 +41,17 @@ const drawCards = () => {
 
 const scoreCards = (a, b) => {
     if (cardValue.indexOf(a) > cardValue.indexOf(b)) {
-        return `Computer Wins!`
+        msg = `Computer Wins!`
+        PCScore++
     } else if (cardValue.indexOf(b) > cardValue.indexOf(a)) {
-        return `You Win!`
+        msg = `You Win!`
+        myScore++
     } else {
-        return 'WAR!'
+        msg = 'WAR!'
     }
+    winnerText.innerText = msg
+    PCScoreText.innerText = `Computer: ${PCScore}`
+    myScoreText.innerText = `Me: ${myScore}`
 }
 
 
